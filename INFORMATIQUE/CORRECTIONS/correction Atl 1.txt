@@ -1,0 +1,221 @@
+Atelier1
+    Exercice 2
+
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int a,b,c;
+            printf("Ce programme doit echanger deux entiers saisis \n");
+
+            printf("Le premier entier est: ");
+            scanf("%d", &a);
+
+             printf("Le deuxieme entier est: ")  ;
+             scanf("%d", &b) ;
+            printf("Les nombres avant l'echange sont %d et %d \n",a,b);
+             c=a;
+            a=b;
+            b=c;
+            printf("Les nombres apres l'echange sont %d et %d",a,b);
+
+             return 0;
+        }
+
+     Exercice 3
+
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            double a,b;
+            double resultat ;
+            printf("Ce programme calcule la demi-somme de deux nombres\n");
+
+            printf("Veillez saisir le premier nombre:");
+            scanf("%lf", &a);
+
+            printf("Veillez saisir le deuxieme noombre:");
+            scanf("%lf", &b);
+
+            resultat=(a+b)/2 ;
+
+            printf("La demi-somme de ces deux nombres est %lf",resultat);
+            return 0;
+        }
+
+    Exercice 4
+
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int a=0,b=0;
+            int resultat=0;
+            printf("Ce programme calcule le produit de deux entiers\n ");
+
+            printf("Veillez inscrire le premier entier:"); //informations sur le premier nombre
+            scanf("%d", &a);
+
+            printf("Veillez inscrire le deuxieme entier:"); //informations sur le deuxieme nombre
+            scanf("%d", &b);
+
+            resultat= a*b ;
+
+            printf("Le produit de ces deux entiers est %d",resultat);
+            return 0;
+        }
+
+    Exercice 5
+
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            double x=0;
+            double resultat=0;
+            printf("Ce programme affiche l'image d'un reel x par la fonction f: x---> 2x+1 \n");
+
+            printf("Veillez rentrer le reel: x=");
+            scanf("%lf", &x);
+
+            resultat= 2*x+1 ;
+
+            printf("L'image de %lf par f est %lf",x,resultat);
+            return 0;
+        }
+
+    Exercice 6
+
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            double longueur,largeur,hauteur;
+            double resultat;
+
+            printf("Ce programme permet de calculer le volume d'un pave droit \n");
+
+            printf("veillez saisir les informations du pavé droit \n");
+
+            printf("Sa longueur est:"); // debut des dimensions
+            scanf("%lf", &longueur);
+
+            printf("Sa largeur est:");
+            scanf("%lf", &largeur);
+
+            printf("Sa hauteur est:");
+            scanf("%lf", &hauteur);    // fin des dimensions
+
+            resultat=longueur*largeur*hauteur ;
+
+            printf("Le volume du pave droit ayant pour longueur %lf, largeur %lf et pour hauteur %lf est %lf",longueur,largeur,hauteur,resultat);
+             return 0;
+        }
+
+                                    SUITE👀😤
+        
+    Exercice 1
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        #include <math.h> // Bibliothèque math de racine carrée
+
+        int main()
+        {
+            int A=0,B=0,C=0;
+
+            double S=0,P=0, resultat=0;
+
+            printf("veillez saisir les longueurs des cotes du triangle \n");
+            printf("A=");
+            scanf("%d", &A);
+            printf("B=");
+            scanf("%d", &B);
+            printf("C=");
+            scanf("%d", &C);
+
+            P= (A+B+C)/2.0;
+
+            S=P*(P-A)*(P-B)*(P-C);
+            resultat = sqrt (S);
+
+             printf("L'aire de ce triangle est alors %lf" , resultat);
+
+            return 0;
+        }
+
+    Exercice 2
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        int main(Calculatrice)
+        {
+            printf("Bonjour ici c'est mon code vas faire le tien Made by Kxno7 \n");
+            int a=0, b=0 ;
+            int resultat1=0, resultat2=0;
+            int resultat3=0;
+            double resultat4=0;
+
+            printf("Entrez le premier nombre :");
+            scanf("%d", &a);
+
+            printf("Entrez le deuxieme nombre :");
+            scanf("%d", &b);
+
+            resultat1=a+b;
+            resultat2=a-b;
+            resultat3=a*b;
+            resultat4=(double)a/(double)b;
+
+            printf("Calculs\n");
+
+            printf("%d+%d=%d\n",a,b,resultat1);
+            printf("%d-%d=%d\n",a,b,resultat2);
+            printf("%d*%d=%\n",a,b,resultat3);
+            printf("%d/%d=%.3lf\n",a,b,resultat4);
+
+            printf("Au revoir ");
+            return 0;
+        }
+    
+    Exercice 3
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        #include <math.h>
+        int main()
+        {
+            int XA=0, XB=0;
+            int YA=0, YB=0;
+            double P0=0, P1=0, P2=0;
+            double P3=0, P4=0;
+            printf("Bonjour \n");
+            printf("Ce programme permet de calculer la distance entre deux points A et B\n");
+
+            printf("Veuillez entrer les coordonnees du point A :\n"); // coordonnées de A
+            printf("XA:");
+            scanf("%d", &XA);
+            printf("YA:");
+            scanf("%d", &YA);
+
+            printf("Veuillez entrer les coordonnees du point B :\n"); //  COORDONN2ES DE B
+            printf("XB:");
+            scanf("%d", &XB);
+            printf("YB:");
+
+            scanf("%d", &YB);
+            P0= XB - XA;
+            P1= YB - YA;
+            P2= pow (P0,2);
+            P3= pow (P1,2);
+            P4= sqrt (P2 + P3);
+
+            printf("La distance entre les deux points A et B selectionnes est donc de %lf m", P4);
+             return 0;
+        }

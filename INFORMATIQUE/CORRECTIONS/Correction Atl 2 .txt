@@ -1,0 +1,545 @@
+
+===============================
+           Atelier 2
+===============================
+
+----- Exercice 1 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a;
+    printf("Veillez saisir un entier naturel:");
+    scanf("%d", &a);
+    if(a%2)
+    {
+        printf("L'entier  est impair");
+    }
+    else
+    {
+        printf("L'entier est pair");
+    }
+        return 0;
+}
+
+----- Exercice 2 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b,c;
+
+    printf("Saisissez les entiers \n Le premier: ");
+    scanf("%d", &a);
+
+    printf("Le second:");
+    scanf("%d", &b);
+
+    printf("Le troisieme:");
+    scanf("%d", &c);
+
+    if (a-b>0 && a-c>0)
+        {
+            printf("Le plus grand entier saisi est:%d",a);
+
+        }
+    else if(b-a>0 && b-c>0)
+
+        {
+            printf("Le plus grand entier saisi est %d",b);
+
+        }
+
+     else
+        {
+                printf("Le plus grand entier saisi est %d",c);
+
+        }
+
+    return 0;
+}
+
+----- Exercice 3 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b;
+    printf("Saisissez le premier nombre: \t");
+    scanf("%d", &a);
+
+    printf("saisissez le deuxieme entier:\t");
+    scanf("%d", &b);
+
+    if((a>0 && b>0) || (a<0 && b<0))
+    {
+        printf("Leur produit est positif");
+    }
+    else
+    {
+        printf("Leur produit est negatif");
+    }
+
+        return 0;
+}
+
+----- Exercice 4 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int age;
+    printf("Quel est votre age: \t");
+    scanf("%d", &age);
+
+    if(age>=6 && age<=7)
+    {
+        printf("Poussin");
+    }
+    else if ( age>=8 && age<=9)
+    {
+        printf("Pupille");
+    }
+        else if (age>=10 && age<=11)
+    {
+        printf("Minime");
+    }
+
+        else
+    {
+    printf("Cadet");
+    }
+
+    return 0;
+}
+
+----- Exercice 5 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+#define PI 3.14159
+int main()
+{
+    double r, perimetre,surface;
+    printf("Saisissez le rayon du cercle:\t");
+    scanf("%lf", &r);
+
+    perimetre=2*r*PI;
+    surface=r*r*PI;
+
+    printf("Le cercle de rayon %lf a pour perimetre %.2lf et pour surface %.2lf",r,perimetre,surface);
+
+    return 0;
+}
+
+----- Exercice 6 -----
+
+/* Exercice 6 non fourni - À faire soi-même */
+
+----- Exercice 7 -----
+
+#include <stdio.h>
+
+int main()
+{
+    double note;
+    printf("Entrez la note de l'etudiant : ");
+    scanf("%lf", &note);
+
+    if (note < 5)
+    {
+        printf("Note : %.2lf - Appreciation : Trop nul\n", note);
+    }
+    else if (note < 10)
+    {
+        printf("Note : %.2lf - Appreciation : Nul\n", note);
+    }
+    else if (note < 15)
+    {
+        printf("Note : %.2lf - Appreciation : Pas trop nul\n", note);
+    }
+    else if (note < 20)
+    {
+        printf("Note : %.2lf - Appreciation : Trop top\n", note);
+    }
+    else if (note == 20)
+    {
+        printf("Note : %.2lf - Appreciation : T'es un boss\n", note);
+    }
+    else
+    {
+        printf("Note : %.2lf - Appreciation : Valeur invalide (la note ne peut pas depasser 20)\n", note);
+    }
+
+    return 0;
+}
+
+----- Exercice 8 -----
+
+#include <stdio.h>
+
+int main() {
+    int chiffre;
+
+    // Demande à l'utilisateur de saisir un chiffre
+    printf("Veuillez saisir un chiffre entre 0 et 9 : ");
+    scanf("%d", &chiffre);
+
+    // Vérifie si le chiffre est dans l'intervalle autorisé
+    if (chiffre >= 0 && chiffre <= 9)
+        {
+        switch (chiffre)
+         {
+            case 0: printf(" zero.\n" );
+            break;
+            case 1: printf(" un.\n" );
+            break;
+            case 2: printf(" deux.\n" );
+            break;
+            case 3: printf("trois.\n" );
+            break;
+            case 4: printf(" quatre.\n" );
+            break;
+            case 5: printf("cinq.\n" );
+            break;
+            case 6: printf(" six.\n" );
+            break;
+            case 7: printf(" sept.\n" );
+            break;
+            case 8: printf(" huit.\n" );
+            break;
+            case 9: printf("neuf.\n" );
+            break;
+            default:
+            break;
+        }
+    }
+    else
+        {
+        printf("Veuillez entrer un chiffre valide dans l'intervalle [0-9].\n");
+        }
+
+    return 0;
+}
+
+----- Exercice 9 -----
+
+/* Exercice 9 non fourni - À faire soi-même Je blague
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int chiffre;
+    printf("Veuillez entrer un chiffre entre 0 et 9 : ");
+    scanf("%d", &chiffre);
+    if (chiffre < 0 || chiffre > 9)
+    {
+        printf("Chiffre invalide. Veuillez entrer un chiffre entre 0 et 9.\n");
+        return 1;
+    }
+
+    switch(chiffre)
+    {
+        case 0:
+            printf("zéro\n");
+            break;
+        case 1:
+            printf("un\n");
+            break;
+        case 2:
+            printf("deux\n");
+            break;
+        case 3:
+            printf("trois\n");
+            break;
+        case 4:
+            printf("quatre\n");
+            break;
+        case 5:
+            printf("cinq\n");
+            break;
+        case 6:
+            printf("six\n");
+            break;
+        case 7:
+            printf("sept\n");
+            break;
+        case 8:
+            printf("huit\n");
+            break;
+        case 9:
+            printf("neuf\n");
+            break;
+        default:
+            printf("Erreur inconnue.\n");
+            break;
+    }
+
+    return 0;
+}
+
+
+----- Exercice 10 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a;
+    printf("Saisissez une valeur d'echelle\t");
+    scanf("%d", &a);
+    if (a<1)
+    {
+        printf("Erreur de saisie\n");
+        while (a<1)
+        {
+            printf(" Re-saisissez une valeur d'echelle\t");
+            scanf("%d", &a);
+        }
+    }
+    if (a>9)
+    {
+        printf("C'est l'apocalypse");
+    }
+
+    if (a>1 && a<9)
+    {
+        switch(a)
+            {
+            case 1:
+            printf("Micro tremblement de terre non ressenti");
+            break;
+            case 2:
+            printf("Tres mineur. Non ressenti mais detecte");
+            break;
+            case 3:
+            printf("Mineur. Causant rarement de degats");
+            break;
+            case 4:
+            printf("Leger. Secousses notables d'objets a l'interieur des maisons ");
+            break;
+            case 5:
+            printf("Modere.Legers dommages aux edifices biens construits");
+            break;
+            case 6:
+            printf("Fort.Destructeur dans des zones allant jusqu'a 180 Km a la ronde si elles sont peuplees");
+            break;
+            case 7:
+            printf("Majeur.Dommages moderes a severes dans des zones plus vastes.");
+            break;
+            case 8:
+            printf("Important.Dommanges serieux dans des zones a des centaines de kilometres a la ronde ");
+            break;
+            default:
+            printf("Devastateur.Devaste des zones sur des milliers de kilometres a la ronde");
+            break;
+            }
+
+    }
+    return 0;
+}
+
+----- Exercice 11 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nombre;
+
+    // Demande à l'utilisateur de saisir un nombre
+    printf("Veuillez saisir un nombre (2, 4, 6, 8) : ");
+    scanf("%d", &nombre);
+
+    // Vérification du nombre saisi et affichage du mouvement correspondant
+    switch (nombre)
+    {
+        case 6:
+        printf("Le personnage va a droite.\n");
+        break;
+        case 4:
+        printf("Le personnage va a gauche.\n");
+        break;
+        case 8:
+        printf("Le personnage va en haut.\n");
+        break;
+        case 2:
+        printf("Le personnage va en bas.\n");
+        break;
+        default:
+        printf("Erreur de saisie, le personnage ne bouge pas.\n");
+        break;
+    }
+
+return 0;
+}
+
+----- Exercice 12 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <stdio.h>
+
+int main()
+{
+    int mois;
+
+
+    printf("Entrez le numéro du mois (1-12) : ");
+    scanf("%d", &mois);
+
+
+    switch (mois)
+    {
+        case 1:  // Janvier
+        case 3:  // Mars
+        case 5:  // Mai
+        case 7:  // Juillet
+        case 8:  // Août
+        case 10: // Octobre
+        case 12: // Décembre
+        printf("Le mois %d a 31 jours.\n", mois);
+        break;
+
+        case 4:  // Avril
+        case 6:  // Juin
+        case 9:  // Septembre
+        case 11: // Novembre
+        printf("Le mois %d a 30 jours.\n", mois);
+        break;
+
+        case 2:  // Février
+        printf("Le mois %d a 28 ou 29 jours (année bissextile).\n", mois);
+        break;
+
+        default:
+        printf("Numéro de mois invalide. Veuillez entrer un nombre entre 1 et 12.\n");
+        break;
+    }
+
+    return 0;
+}
+
+}
+
+----- Exercice 13 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int h,m,s;
+
+    printf("Donnez l'heure:");
+    scanf("%d", &h);
+
+    printf("Donnez les minutes:");
+    scanf("%d", &m);
+
+    printf("Donnez les secondes:");
+    scanf("%d", &s);
+
+    printf("Le temps %dh%dmn%ds contient %dsecondes ",h,m,s,h*3600+m*60+s);
+
+    return 0;
+}
+
+----- Exercice 14 -----
+
+#include <stdio.h>
+
+int main() 
+{
+    int total_seconds, hours, minutes, seconds;
+
+    // Demande à l'utilisateur de saisir le temps en secondes
+    printf("Entrez le temps en secondes: ");
+    scanf("%d", &total_seconds);
+
+    // Conversion en heures, minutes et secondes
+    hours = total_seconds / 3600;
+    minutes = (total_seconds % 3600) / 60;
+    seconds = total_seconds % 60;
+
+    // Affichage du résultat
+    printf("Temps converti: %d heures, %d minutes, %d secondes\n", hours, minutes, seconds);
+
+    return 0;
+}
+
+----- Exercice 15 -----
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main()
+{
+    int a,b,c,delta;
+    printf("Ce programme permet de resoudre une equation du second degre de type Ax2 + Bx + C =0 \n");
+
+    //information sur les reels
+    printf("a=");
+    scanf("%d",&a);
+
+    printf("b=");
+    scanf("%d",&b);
+
+    printf("c=");
+    scanf("%d",&c);
+    // fin des informations
+
+    double S1,S2,S3,S4,racine;
+
+    if(a==0)
+    {
+        if(b!=0)
+            {
+                S1=(double)(-c)/(double)(b);
+                printf("L'equation admet une solution unique qui est %lf", S1);
+            }
+        else
+        printf("L'equation n'admet pas de solution");
+    }
+
+    if(a!=0)
+        {
+            delta=(b*b)-(4*a*c);
+            if(delta==0)
+            {
+                S2=(double)(-b)/(double)(2*a);
+                printf("L'equation admet une solution double %lf", S2);
+            }
+            if (delta>0)
+            {
+                racine=sqrt(delta);
+                S3=(double)((double)(-b)-racine)/(double)(2*a);
+                S4=(double)((double)(-b)+racine)/(double)(2*a);
+                printf("L'equation admet deux solutions que sont %lf et %lf",S3,S4);
+            }
+            if (delta<0)
+                {
+                    int delta1;
+                    double PReel,PImag;
+                    delta1=(b*b-4*a*c);
+                    PReel=(double)(-b)/(double)(2*a);
+                    PImag=(double)sqrt(-delta1)/(double)(2*a);
+                    printf("L'equation admet deux solutions complexes conjuguees que sont \t %lf + %lfi et\t %lf - %lfi",PReel,PImag,PReel,PImag);
+                }
+        }
+    return 0;
+}

@@ -1,0 +1,583 @@
+Atelier 5
+
+	Exercice 1 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        void afficherRectangle(int l, int c);
+
+        int main()
+        {
+            int l, c;
+
+            printf("Entrez le nombre de lignes : ");
+            scanf("%d", &l);
+            printf("Entrez le nombre de colonnes : ");
+            scanf("%d", &c);
+
+            afficherRectangle(l, c);
+
+            return 0;
+        }
+
+        void afficherRectangle(int l, int c)
+        {
+            for (int i = 0; i < l; i++)
+            {
+                for (int j = 0; j < c; j++)
+                {
+                    printf("*");
+                }
+                printf("\n");
+            }
+        }
+
+	Exercice 2 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        double convertisseur(double nombre)
+        {
+            return  nombre /(1.609);
+        }
+
+        int main()
+        {
+            double distance=0,n=0;
+            printf("Ce programme convertit les kilometres en miles\n");
+            printf("saisis le nombre");
+            scanf("%lf", &distance);
+            while (distance<0)
+            {
+                printf(" Le nombre doit etre Positif Chef  \n");
+                scanf("%lf",&distance);
+            }
+
+            n=convertisseur(distance);
+            printf("La distance   en miles est de  %lf",n);
+
+            return 0;
+        }
+
+	Exercice 3 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        double temp(double nombre);
+        int main()
+        {
+            double n,result;
+            printf("entrez la valeur de la temperature en degres Fahrenheit:");
+            scanf("%lf",&n);
+            result=temp(n);
+            printf(" En degres centigrades on a %lf",result);
+            return 0;
+        }
+        double temp(double nombre)
+        {
+            double resultat=0;
+            resultat=(5.0/9.0)*(nombre-32);
+            return resultat;
+        }
+	Exercice 4 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        #include <math.h>
+
+        double func(double nombre);
+
+        int main()
+        {
+            double n;
+            printf("Rayon de la sphère:");
+            scanf("%lf",&n);
+            while (n<0)
+            {
+                printf("Rayon Positf:");
+                scanf("%lf",&n);
+            }
+            printf("Le volume est %lf Unités de volumes",func(n));
+            return 0;
+        }
+
+        double func(double nombre)
+        {
+            return (4.0/3.0)*M_PI*nombre;
+        }
+
+	Exercice 5 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        float calculerPayeHebdomadaire(int heures, float salaireHoraire);
+
+        int main() 
+        {
+            int heures;
+            float salaireHoraire, payeHebdo;
+
+            printf("Entrez le nombre d'heures travaillées dans la semaine : ");
+            scanf("%d", &heures);
+            printf("Entrez le salaire horaire : ");
+            scanf("%f", &salaireHoraire);
+
+            payeHebdo = calculerPayeHebdomadaire(heures, salaireHoraire);
+
+            printf("La paye hebdomadaire est de : %.2f\n", payeHebdo);
+
+            return 0;
+        }
+
+        float calculerPayeHebdomadaire(int heures, float salaireHoraire)
+        {
+            float paye;
+            if (heures <= 35)
+            {
+                paye = heures * salaireHoraire;
+            }
+            else
+            {
+                int heuresSup = heures - 35;
+                paye = (35 * salaireHoraire) + (heuresSup * salaireHoraire * 1.5);
+            }
+
+            return paye;
+        }
+
+	Exercice 6 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        #include <math.h>
+        void resolverEquationSecondDegre(float a, float b, float c);
+
+        int main()
+        {
+            float a, b, c;
+
+            printf("Entrez le coefficient a : ");
+            scanf("%f", &a);
+
+            printf("Entrez le coefficient b : ");
+            scanf("%f", &b);
+
+            printf("Entrez le coefficient c : ");
+            scanf("%f", &c);
+
+            resolverEquationSecondDegre(a, b, c);
+
+            return 0;
+        }
+
+        void resolverEquationSecondDegre(float a, float b, float c)
+        {
+            float discriminant = b * b - 4 * a * c;
+
+            if (discriminant > 0)
+            {
+                float racine1 = (-b + sqrt(discriminant)) / (2 * a);
+                float racine2 = (-b - sqrt(discriminant)) / (2 * a);
+
+                printf("Les racines reelles sont : %.2f et %.2f\n", racine1, racine2);
+            }
+            else if (discriminant == 0)
+            {
+                float racine = -b / (2 * a);
+
+                printf("Il y a une racine reelle : %.2f\n", racine);
+            }
+            else
+            {
+                printf("Il n'y a pas de racines reelles.\n");
+            }
+        }
+
+	Exercice 7 :
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        double Moyenne(double a, double b, double c);
+
+        int main()
+        {
+            double a, b, c, moyenne;
+
+            printf("Entrez le premier reel : ");
+            scanf("%lf", &a);
+
+            printf("Entrez le deuxieme reel : ");
+            scanf("%lf", &b);
+
+            printf("Entrez le troisieme reel : ");
+            scanf("%lf", &c);
+
+            moyenne = Moyenne(a, b, c);
+
+            printf("La moyenne des trois reels est : %.2f\n", moyenne);
+
+            return 0;
+        }
+
+        double Moyenne(double a, double b, double c)
+        {
+            return (a + b + c) / 3.0;
+        }
+
+	Exercice 8 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        #include <math.h>
+
+        float calculerVolumeCone(float r, float h)
+        {
+            return (1.0 / 3.0) * M_PI * r * r * h;
+        }
+
+        int main()
+        {
+            float r, h, volume;
+
+            printf("Entrez le rayon de la base du cône (r) : ");
+            scanf("%f", &r);
+
+            printf("Entrez la hauteur du cône (h) : ");
+            scanf("%f", &h);
+
+            volume = calculerVolumeCone(r, h);
+
+            printf("Le volume du cône est : %.2f\n", volume);
+
+            return 0;
+        }
+
+	Exercice 9 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        int sommeTableau(int tableau[], int tailleTableau)
+        {
+            int somme = 0;
+            for (int i = 0; i < tailleTableau; i++)
+            {
+                somme += tableau[i];
+            }
+            return somme;
+        }
+
+        int main()
+        {
+            int taille, somme;
+
+            printf("Entrez la taille du tableau : ");
+            scanf("%d", &taille);
+
+            int tableau[taille];
+
+            printf("Entrez les éléments du tableau :\n");
+            for (int i = 0; i < taille; i++)
+            {
+                printf("Élément %d : ", i + 1);
+                scanf("%d", &tableau[i]);
+            }
+
+            somme = sommeTableau(tableau, taille);
+
+            printf("La somme des éléments du tableau est : %d\n", somme);
+
+            return 0;
+        }
+
+	Exercice 10 :
+	    #include <stdio.h>
+        #include <stdlib.h>
+
+        double moyenneTableau(int tableau[], int tailleTableau)
+        {
+            int somme = 0;
+            for (int i = 0; i < tailleTableau; i++)
+            {
+                somme += tableau[i];
+            }
+            return (double)somme / tailleTableau;
+        }
+
+        int main()
+        {
+            int taille;
+
+            printf("Entrez la taille du tableau : ");
+            scanf("%d", &taille);
+
+            int tableau[taille];
+
+            printf("Entrez les éléments du tableau :\n");
+            for (int i = 0; i < taille; i++)
+            {
+                printf("Élément %d : ", i + 1);
+                scanf("%d", &tableau[i]);
+            }
+
+            double moyenne = moyenneTableau(tableau, taille);
+
+            printf("La moyenne des éléments du tableau est : %.2f\n", moyenne);
+
+            return 0;
+        }
+
+	Exercice 11 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        void copie(int tableauOriginal[], int tableauCopie[], int tailleTableau)
+        {
+            for (int i = 0; i < tailleTableau; ++i)
+            {
+                tableauCopie[i] = tableauOriginal[i];
+            }
+        }
+
+        int main()
+        {
+            int tableauOriginal[] = {1, 2, 3, 4, 5};
+            int tailleTableau = sizeof(tableauOriginal) / sizeof(tableauOriginal[0]);
+            int tableauCopie[tailleTableau];
+
+            printf("Tableau original : ");
+            for (int i = 0; i < tailleTableau; ++i)
+            {
+                printf("%d ", tableauOriginal[i]);
+            }
+            printf("\n");
+
+            copie(tableauOriginal, tableauCopie, tailleTableau);
+
+            printf("Tableau copie : ");
+            for (int i = 0; i < tailleTableau; ++i)
+            {
+                printf("%d ", tableauCopie[i]);
+            }
+            printf("\n");
+
+            return 0;
+        }
+
+	Exercice 12 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        void maximumTableau(int tableau[], int tailleTableau, int valeurMax)
+        {
+            for (int i = 0; i < tailleTableau; i++)
+            {
+                if (tableau[i] > valeurMax)
+                {
+                    tableau[i] = 0;
+                }
+            }
+        }
+
+        int main()
+        {
+            int tableau[] = {1, 5, 8, 3, 10, 7, 12};
+            int tailleTableau = 7;
+            int valeurMax = 6;
+
+            maximumTableau(tableau, tailleTableau, valeurMax);
+
+            printf("Tableau après modification : ");
+            for (int i = 0; i < tailleTableau; i++)
+            {
+                printf("%d ", tableau[i]);
+            }
+            printf("\n");
+
+            return 0;
+        }
+
+	Exercice 13 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        void ordonnerTableau(int tableau[], int tailleTableau)
+        {
+            int i, j, temp;
+            for (i = 0; i < tailleTableau - 1; i++)
+            {
+                for (j = i + 1; j < tailleTableau; j++)
+                {
+                    if (tableau[i] > tableau[j])
+                    {
+                        temp = tableau[i];
+                        tableau[i] = tableau[j];
+                        tableau[j] = temp;
+                    }
+                }
+            }
+        }
+
+        int main()
+        {
+            int tableau[] = {15, 81, 22, 13};
+            int tailleTableau = sizeof(tableau) / sizeof(tableau[0]);
+
+            printf("Tableau avant tri: ");
+            for (int i = 0; i < tailleTableau; i++)
+            {
+                printf("%d ", tableau[i]);
+            }
+            printf("\n");
+
+            ordonnerTableau(tableau, tailleTableau);
+
+            printf("Tableau après tri: ");
+            for (int i = 0; i < tailleTableau; i++)
+            {
+                printf("%d ", tableau[i]);
+            }
+            printf("\n");
+
+            return 0;
+        }
+
+	Exercice 14 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int indice_premier_negatif(double t[], int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if (t[i] < 0)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        int main()
+        {
+            double t[] = {3.5, 2.1, -4.5, 7.8, -1.2};
+            int n = 5;
+
+            int indice = indice_premier_negatif(t, n);
+
+            if (indice != -1)
+            {
+                printf("L'indice du premier élément négatif est: %d\n", indice);
+            }
+            else
+            {
+                printf("Aucun élément négatif trouvé.\n");
+            }
+
+            return 0;
+        }
+
+	Exercice 15 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        double valeur_plus_grand(double t[], int n)
+        {
+            double max = t[0];
+            for (int i = 1; i < n; i++)
+            {
+                if (t[i] > max)
+                {
+                    max = t[i];
+                }
+            }
+            return max;
+        }
+
+        int main()
+        {
+            double t[] = {3.5, 2.1, 4.5, 7.8, 1.2};
+            int n = 5;
+
+            double max = valeur_plus_grand(t, n);
+            printf("Le plus grand élément parmi les %d premiers éléments est: %.2f\n", n, max);
+
+            return 0;
+        }
+
+    Exercice 16 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int indice_plus_grand(double t[], int n)
+        {
+            int indiceMax = 0;
+            for (int i = 1; i < n; i++)
+            {
+                if (t[i] > t[indiceMax])
+                {
+                    indiceMax = i;
+                }
+            }
+            return indiceMax;
+        }
+
+        int main()
+        {
+            double t[] = {3.5, 2.1, 4.5, 7.8, 7.8};
+            int n = 5;
+
+            int indiceMax = indice_plus_grand(t, n);
+            printf("L'indice du plus grand élément parmi les %d premiers éléments est: %d\n", n, indiceMax);
+
+            return 0;
+        }
+
+	Exercice 17 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int schtroumpf(double t1[], double t2[], int taille)
+        {
+            int somme = 0;
+            for (int i = 0; i < taille; i++)
+            {
+                somme += t1[i] * t2[i];
+            }
+            return somme;
+        }
+
+        int main()
+        {
+            double t1[] = {1.2, 3.4, 5.6};
+            double t2[] = {6.7, 8.9, 10.1};
+            int taille = sizeof(t1) / sizeof(t1[0]);
+
+            printf("Le schtroumpf des deux tableaux est : %d\n", schtroumpf(t1, t2, taille));
+
+            return 0;
+        }
+
+	Exercice 18 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        void somme(double re1, double im1, double re2, double im2, double *re_resultat, double *im_resultat)
+        {
+            *re_resultat = re1 + re2;
+            *im_resultat = im1 + im2;
+        }
+
+        int main()
+        {
+            double re1, im1, re2, im2;
+            double re_resultat, im_resultat;
+
+            printf("Entrez la partie reelle du premier nombre complexe: ");
+            scanf("%lf", &re1);
+            printf("Entrez la partie imaginaire du premier nombre complexe: ");
+            scanf("%lf", &im1);
+
+            printf("Entrez la partie reelle du second nombre complexe: ");
+            scanf("%lf", &re2);
+            printf("Entrez la partie imaginaire du second nombre complexe: ");
+            scanf("%lf", &im2);
+
+            somme(re1, im1, re2, im2, &re_resultat, &im_resultat);
+
+            printf("La somme des deux nombres complexes est: %.2f + %.2fi\n", re_resultat, im_resultat);
+
+            return 0;
+        }

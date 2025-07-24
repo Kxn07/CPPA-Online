@@ -1,0 +1,413 @@
+Atelier 3 – Structures conditionnelles et instructions switch
+
+	Exercice 1 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        int main()
+        {
+            int a;
+            printf("Saississez les nombres et tapez -1 pour terminer\n");
+            while(1)
+            {
+                scanf("%d",&a);
+                if(a==0)
+                break;
+            }
+            int min=0,max=0,valeur=0;
+            min=valeur;
+            max=valeur;
+             if(valeur<a)
+            {
+            min=valeur;
+            }
+            if(valeur>a)
+            {
+            max=valeur;
+            }
+            return 0;
+        }
+
+	Exercice 2 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int a;
+            printf("Saississez un nombre compris entre 10 et 20: ");
+            scanf("%d", &a);
+
+            while (a<10 || a>20)
+            {
+                if (a<10)
+                {
+                    printf("Plus grand\n");
+                    scanf("%d", &a);
+                }
+                 if (a>20)
+                {
+                    printf("Plus petit \n");
+                    scanf("%d", &a);
+                }
+
+            }
+            printf("Felications");
+            return 0;
+        }
+
+
+	Exercice 3 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+
+            int nombre, somme = 0;
+
+            printf("Entrez un nombre: ");
+            scanf("%d", &nombre);
+
+            int compteur;
+
+            for ( compteur = 1; compteur <= nombre; compteur++)
+            {
+                somme += compteur;
+            }
+
+            printf("%d\n", somme);
+
+            return 0;
+        }
+
+	Exercice 4 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int n;
+
+            printf("Saississez un entier naturel: \t");
+            scanf("%d",&n);
+            if (n==0 || n==1 )
+            {
+                printf("La somme des entiers pair de 1 a %d est 0",n);
+            }
+            while (n<0)
+            {
+                printf("ERROR ERROR VITE UN ENTIER NATUREL °(^^_^^)° \n");
+                scanf("%d", &n);
+            }
+
+            if (n>1)
+            {
+                int i,somme=0;
+                for(i=2;i<=n;i+=2)
+                {
+                    somme+=i ;
+                }
+                 printf("La somme des sombres pairs compris entre 1 et %d est %d",n,somme);
+            }
+            return 0;
+        }
+
+	Exercice 5 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int  n,compteur;
+            double somme;
+            printf("Veuilleur entrer un nbre ");
+            scanf("%d",&n);
+            for (compteur=1; compteur<=n; compteur++)
+            {
+                somme+=(1/(double)compteur);
+            }
+            printf("somme=%lf",somme);
+            return 0;
+        }
+
+	Exercice 6 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int n;
+            printf("Donnees d'entree \n .");
+            scanf("%d", &n);
+            printf("Donnees de sorties \n ");
+            int i,result;
+            for(i=0;i<=10;i++)
+            {
+                result=n*i;
+                printf(".%d*%d=%2d\n" ,n,i,result);
+            }
+            return 0;
+        }
+
+
+	Exercice 7 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        #include <stdio.h>
+
+        int main()
+        {
+            int n;
+            int factorielle = 1;
+            printf("Entrez un nombre entier positif : ");
+            scanf("%d", &n);
+            while(n<0)
+            {
+                printf("Entrez un nombre entier positif : ");
+                scanf("%d", &n);
+            }
+            if (n>=0)
+            {
+                for(int i=1;i<=n;i++)
+                {
+                    factorielle*=i;
+                }
+                printf("factoriel %d = %d",n,factorielle);
+            }
+            return 0;
+        }
+
+
+	Exercice 8 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int num1, num2;
+
+            printf("Entrez le premier nombre : ");
+            scanf("%d", &num1);
+            printf("Entrez le deuxième nombre : ");
+            scanf("%d", &num2);
+
+            if (num1 < 0) num1 = -num1;
+            if (num2 < 0) num2 = -num2;
+
+            while (num2 != 0)
+            {
+                int ok = num2;
+                num2 = num1 % num2;
+                num1 = ok;
+            }
+
+            printf("Le PGCD des deux nombres est : %d\n", num1);
+
+            return 0;
+        }
+
+
+	Exercice 9 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int nbreSecret = 42;
+            int essai;
+            int tentatives = 10;
+
+            printf("Bienvenue dans le jeu de devinette !\n");
+            printf("Essayez de deviner le nombre secret entre 1 et 100.\n");
+            printf("Vous avez %d tentatives.\n", tentatives);
+
+            while (tentatives > 0)
+            {
+                printf("\nIl vous reste %d tentatives. Entrez votre essai : ", tentatives);
+                scanf("%d", &essai);
+
+                if (essai < nbreSecret)
+                {
+                    printf("Plus grand !\n");
+                }
+                else if (essai > nbreSecret)
+                {
+                    printf("Plus petit !\n");
+                }
+                else
+                {
+                    printf("GagnE ! Le nombre secret Etait bien %d.\n", nbreSecret);
+                    break;
+                }
+
+                tentatives--;
+
+                if (tentatives == 0)
+                {
+                    printf("Desole, vous avez epuise vos tentatives. Le nombre secret Etait %d.\n", nbreSecret);
+                }
+            }
+
+            return 0;
+        }
+
+
+	Exercice 10 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        int main()
+        {
+            int x, n;
+            int resultat = 1;
+
+            printf("Entrez la base (x) : ");
+            scanf("%d", &x);
+            printf("Entrez l'exposant (n) : ");
+            scanf("%d", &n);
+
+            if (n < 0)
+            {
+                printf("L'exposant doit être un entier positif ou nul.\n");
+                return 1;  // Je sais pas a quoi sert return 1
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                resultat *= x;
+            }
+
+            printf("%d^%d = %d\n", x, n, resultat);
+
+            return 0;
+        }
+
+
+	Exercice 11 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int U0 = 2, U1 = 1;
+            int Un;
+            printf("U0 = %d\n", U0);
+            printf("U1 = %d\n", U1);
+
+            for (int n = 2; n < 20; n++)
+            {
+                Un = U0 + U1;
+                printf("U%d = %d\n", n, Un);
+                U0 = U1;
+                U1 = Un;
+            }
+
+            return 0;
+        }
+
+	Exercice 12 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        int main()
+        {
+            int l, c;
+            printf("Entrez le nombre de lignes (l) : ");
+            scanf("%d", &l);
+            printf("Entrez le nombre de colonnes (c) : ");
+            scanf("%d", &c);
+
+            while (l <= 0 || c <= 0)
+            {
+                printf("Le nombre de lignes et de colonnes doit e",tre positif.\n");
+
+                printf("Entrez le nombre de lignes (l) : ");
+                scanf("%d", &l);
+                printf("Entrez le nombre de colonnes (c) : ");
+                scanf("%d", &c);
+            }
+
+            for (int i = 0; i < l; i++)
+            {
+                for (int j = 0; j < c; j++)
+                {
+                    printf("*");
+                }
+                printf("\n");
+            }
+
+            return 0;
+        }
+
+	Exercice 13 :
+		#include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int l;
+            printf("Lignes=  ");
+            scanf("%d",&l);
+            for(int i=0;i<l;i++)
+            {
+                int j=0;
+                for(j=0;j<=i;j++)
+                {
+                    printf("*");
+                }
+                printf("\n");
+            }
+            return 0;
+        }
+
+	Exercice 14 :
+		#include <stdio.h>
+        #include <stdlib.h>
+        int main()
+        {
+            int l, c;
+            printf("Entrez le nombre de lignes : ");
+            scanf("%d", &l);
+            printf("Entrez le nombre de colonnes : ");
+            scanf("%d", &c);
+            for(int i=0;i<l;i++)
+            {
+                for(int j=0;j<c;j++)
+                {
+                    if (i==0 || i==l-1 || j==0 || j==c-1) printf("*");
+                    else printf(" ");
+                }
+                printf("\n");
+            }
+            return 0;
+        }
+
+	Exercice 15 :
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main()
+        {
+            int i,j;
+            printf("x*y\t");
+            for (i=1;i<=10;i++)
+            {
+                printf("%d\t",i);
+            }
+            printf("\n");
+            for (i=1;i<=10;i++)
+            {
+                printf("--------",i);
+            }
+            printf("\n");
+            for(i=1;i<=10;i++)
+            {
+                printf("%d\t",i);
+                for(j=1;j<=10;j++)
+                {
+                        printf("%d\t",i*j);
+                }
+                printf("\n");
+            }
+                return 0;
+        }
+
